@@ -6,5 +6,5 @@ $("#loadData").on("click", () => {
 });
 
 $("#display-btn").on("click", function () {
-  render.renderData(apiManager.getUserData());
+  render.renderData(apiManager.getData());
 });

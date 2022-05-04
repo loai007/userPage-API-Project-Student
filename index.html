@@ -17,10 +17,10 @@
 <body>
     <div class="container">
         <div class="user-container"></div>
-        <div class="quote-container"></div>
+        <div id="kanye" class="quote-container"></div>
         <div class="content-container">
-            <div class="pokemon-container"></div>
-            <div class="meat-container"></div>
+            <div id="pokemon" class="pokemon-container"></div>
+            <div id="meat" class="meat-container"></div>
         </div>
         <div class="friends">
             <h4>Friends</h4>
@@ -38,7 +38,7 @@
     <script src="APIManager.js"></script>
     <script src="main.js"></script>
 
-    <script id="user-container" type="text/x-handlebars-template">
+    <script id="user-container" class="user-info" type="text/x-handlebars-template">
         <div>
         <img src={{picture.medium}} id="profile-pic">
           <div>
@@ -48,11 +48,31 @@
         </div>
       </script>
     <script id="friends-container" type="text/x-handlebars-template">
-        <div> {{#each data}}
+        <div> {{#each friends}}
             <div class="friends">{{name.first}} {{name.last}}</div>
             {{/each}}
         </div>
       </script>
+
+    <script id="quote-container" class="quote-container" type="text/x-handlebars-template">
+        <div> 
+            <p>Favorite Quote:</p>
+            <p class="quote-container">{{kanye}}</p>
+        </div>
+      </script>
+    <script id="pokemon-container" class="pokemon-container" type="text/x-handlebars-template">
+    <div>    
+        <span>{{name}}</span>
+        <img src={{img}} id="pokemon-pic">
+    </div>  
+    </script>
+    <script id="meat-container" class="meat-container" type="text/x-handlebars-template">
+        <div> 
+            <p>About Me: </p>
+            <span>{{meatText}}</span>
+            
+        </div>  
+        </script>
 </body>
 
 </html>
